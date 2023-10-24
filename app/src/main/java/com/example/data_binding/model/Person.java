@@ -1,4 +1,4 @@
-package com.example.data_binding;
+package com.example.data_binding.model;
 
 public class Person {
    private String name;
