@@ -4,6 +4,8 @@
 
     <data>
 
+        <import type="com.example.data_binding.utils.StringUtils"/>
+        <import type="android.view.View"/>
         <variable
             name="product"
             type="com.example.data_binding.model.Product" />
@@ -30,6 +32,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:src="@drawable/vest101"
+            android:visibility="@{product.price> 0 ? View.VISIBLE : View.INVISIBLE}"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -87,7 +90,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="50dp"
-            android:text="@{String.valueOf(product.rating)}"
+            android:text="@{StringUtils.getTotalRatings(product.totalRatings)}"
             app:layout_constraintBottom_toBottomOf="@id/rating_bar"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="@id/rating_bar" />
@@ -102,7 +105,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:gravity="center"
-            android:text="@{String.valueOf(product.price)}"
+            android:text="@{StringUtils.getPrice(product.price)}"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/iv_product" />

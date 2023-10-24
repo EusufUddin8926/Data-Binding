@@ -22,12 +22,9 @@ public class MainActivity extends AppCompatActivity {
 
         binding.setMainActivityViewModel(mViewModel);
 
-        binding.openFragmentBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, FragmentActivity.class);
-                startActivity(intent);
-            }
+        binding.openFragmentBtn.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, FragmentActivity.class);
+            startActivity(intent);
         });
 
 

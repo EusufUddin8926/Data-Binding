@@ -21,11 +21,6 @@ public class ProductDetailsFragment extends Fragment {
     public ProductDetailsFragment() {
     }
 
-
-
-
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentProductDetailsBinding.inflate(inflater, container, false);
