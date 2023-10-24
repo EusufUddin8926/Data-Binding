@@ -5,10 +5,11 @@
     <data>
 
         <import type="com.example.data_binding.utils.StringUtils"/>
+        <import type="com.example.data_binding.model.Product"/>
         <import type="android.view.View"/>
         <variable
             name="product"
-            type="com.example.data_binding.model.Product" />
+            type="Product" />
 
     </data>
 
