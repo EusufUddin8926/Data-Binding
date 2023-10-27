@@ -3,6 +3,7 @@ package com.example.data_binding;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -25,6 +26,14 @@ public class MainActivity extends AppCompatActivity {
         binding.openFragmentBtn.setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, FragmentActivity.class);
             startActivity(intent);
+        });
+
+        binding.recBinding.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, RecyclerViewActivity.class);
+                startActivity(intent);
+            }
         });
 
 
