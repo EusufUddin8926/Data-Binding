@@ -32,7 +32,7 @@
             android:layout_height="0dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
-            android:src="@drawable/vest101"
+            app:setImageFromDrawable="@{product.image}"
             android:visibility="@{product.price> 0 ? View.VISIBLE : View.INVISIBLE}"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintLeft_toLeftOf="parent"
