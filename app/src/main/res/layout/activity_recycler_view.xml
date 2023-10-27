@@ -4,6 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <import type="java.util.List"/>
+        <import type="com.example.data_binding.model.Product"/>
+        <variable
+            name="productList"
+            type="List&lt;Product>" />
 
     </data>
 
@@ -17,6 +22,7 @@
             android:id="@+id/recyclerViewBinding"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            app:bindingList="@{productList}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

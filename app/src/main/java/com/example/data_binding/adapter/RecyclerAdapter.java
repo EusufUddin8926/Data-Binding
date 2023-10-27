@@ -1,31 +1,25 @@
-package com.example.data_binding.DataBindingAdapters;
+package com.example.data_binding.adapter;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.RatingBar;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.databinding.ViewDataBinding;
+import androidx.databinding.library.baseAdapters.BR;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.data_binding.R;
 import com.example.data_binding.databinding.ProductItemBinding;
 import com.example.data_binding.model.Product;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.List;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.BindingRecyclerViewHolder> {
 
     private Context mContext;
     private List<Product> productList;
-    ProductItemBinding rootView;
+   /* ProductItemBinding rootView;*/
+    ViewDataBinding rootView;
 
 
     public RecyclerAdapter(Context mContext, List<Product> productList) {
@@ -44,7 +38,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Bindin
     @Override
     public void onBindViewHolder(@NonNull BindingRecyclerViewHolder holder, int position) {
         Product product = productList.get(position);
-        rootView.setSingleProduct(product);
+        /*rootView.setSingleProduct(product);*/
+        rootView.setVariable(BR.singleProduct, product);
         rootView.executePendingBindings();
 
 
@@ -57,7 +52,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Bindin
 
     public class BindingRecyclerViewHolder extends RecyclerView.ViewHolder{
 
-        public BindingRecyclerViewHolder(@NonNull ProductItemBinding itemView) {
+        public BindingRecyclerViewHolder(@NonNull /*ProductItemBinding itemView*/ViewDataBinding itemView) {
             super(itemView.getRoot());
         }
     }
