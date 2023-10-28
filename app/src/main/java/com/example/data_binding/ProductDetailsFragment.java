@@ -40,4 +40,6 @@ public class ProductDetailsFragment extends Fragment {
     public void fraglistenerBtnClick(Product product){
         Toast.makeText(requireActivity(), product.getName()+" is Clicked", Toast.LENGTH_SHORT).show();
     }
+
+
 }
