@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.data_binding.databinding.ActivityMainBinding;
 import com.example.data_binding.viewmodel.MainActivityViewModel;
@@ -36,6 +37,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        binding.setListener(MainActivity.this);
 
+
+    }
+
+    public void listenerBtnClick(View view){
+        Toast.makeText(this, "Clicked", Toast.LENGTH_SHORT).show();
     }
 }
