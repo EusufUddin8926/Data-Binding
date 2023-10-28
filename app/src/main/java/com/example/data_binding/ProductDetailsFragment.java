@@ -8,8 +8,10 @@ import androidx.lifecycle.ViewModelProvider;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.data_binding.databinding.FragmentProductDetailsBinding;
+import com.example.data_binding.model.Product;
 import com.example.data_binding.viewmodel.MainActivityViewModel;
 
 
@@ -30,6 +32,12 @@ public class ProductDetailsFragment extends Fragment {
 
         binding.setProduct(mViewModel.getProduct());
 
+        binding.setFragmentlistener(this);
+
         return binding.getRoot();
+    }
+
+    public void fraglistenerBtnClick(Product product){
+        Toast.makeText(requireActivity(), product.getName()+" is Clicked", Toast.LENGTH_SHORT).show();
     }
 }

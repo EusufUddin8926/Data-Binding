@@ -10,10 +10,14 @@
         <variable
             name="product"
             type="Product" />
+        <variable
+            name="Fragmentlistener"
+            type="com.example.data_binding.ProductDetailsFragment" />
 
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:onClick="@{()-> Fragmentlistener.fraglistenerBtnClick(product)}"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
